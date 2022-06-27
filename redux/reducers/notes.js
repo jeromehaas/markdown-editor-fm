@@ -59,6 +59,12 @@ const notes = ( state = originalState, action ) => {
 				all: action.payload
 			}
 		};
+		case 'INITIALIZE_NOTES':  {
+			originalState = {
+				...state, 
+				all: action.payload
+			}
+		};
 		default: {
 			return originalState;
 		};

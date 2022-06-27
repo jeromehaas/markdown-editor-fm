@@ -1,19 +1,14 @@
 import { Dashboard } from 'components/03-organisms/dashboard/dashboard';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { toggleTheme } from 'redux/actions/theme';
-import { LoginForm } from 'components/02-molecules/login-form/login-form';
+import { useSelector } from 'react-redux';
 
-export default function HomePage() {
+export default function DashboardPage() {
 
-	const dispatch = useDispatch();
-	const theme = useSelector(state => state.theme.active );
+	const theme = useSelector( state => state.theme.active );
 
- 	 return (
+	return (
 		<div className={`page page--${ theme }`}>
-			<LoginForm />
+    		<Dashboard />
 		</div>
 	  );
-
+	  
 };
-

@@ -6,7 +6,7 @@ import { getAllNotes } from 'redux/actions/notes';
 import { toggleMenu } from 'redux/actions/menu';
 import { Editor } from 'components/02-molecules/editor/editor';
 import { Preview } from 'components/02-molecules/preview/preview';
-import  { DialogBox } from 'components/02-molecules/dialog-box/dialog-box';
+import { DialogBox } from 'components/02-molecules/dialog-box/dialog-box';
 import { Fragment } from 'react';
 import cookie from 'js-cookie';
 import jwt from 'jsonwebtoken';
@@ -18,22 +18,18 @@ const Dashboard = () => {
 
   const dispatch = useDispatch();
   const router = useRouter();
-	const activeNote = useSelector( state => state.notes.active);
-	const currentStatus = useSelector( state => state.menu.status);
-  const previewFocus = useSelector( state => state.preview.focus );
-  const session = useSelector( state => state.session );
+  const activeNote = useSelector(state => state.notes.active);
+  const currentStatus = useSelector(state => state.menu.status);
+  const previewFocus = useSelector(state => state.preview.focus);
 
-  useEffect(() => {
-    const sessionToken = cookie.get('session-token');
-    dispatch( validateSession( sessionToken ));
-  }, [])
+
 
   return (
     <Fragment>
-      <div className={`dashboard ${ currentStatus === 'hidden' ? 'dashboard--hide-menu' : ''} ${ previewFocus === true ? 'dashboard--preview-focus' : ''}`}>
+      <div className={`dashboard ${currentStatus === 'hidden' ? 'dashboard--hide-menu' : ''} ${previewFocus === true ? 'dashboard--preview-focus' : ''}`}>
         <Header />
         <Sidepanel />
-			  <Editor />
+        <Editor />
         <Preview />
       </div>
       <DialogBox className="dashboard__dialog-box" />
