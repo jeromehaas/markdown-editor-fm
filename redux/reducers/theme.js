@@ -1,5 +1,5 @@
 let originalState = {
-	active: 'light'
+	active: 'dark'
 };
 
 const theme = (state = originalState, action) => {

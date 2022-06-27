@@ -1,7 +1,4 @@
-import CodeMirror from '@uiw/react-codemirror';
-import { markdown, markdownLanguage } from '@codemirror/lang-markdown';
-import { languages } from '@codemirror/language-data';
-import { javascript } from '@codemirror/lang-javascript';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateActiveNoteContent } from 'redux/actions/notes';
 import { Tag } from 'components/01-atoms/tag/tag';
